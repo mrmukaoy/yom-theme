@@ -7,20 +7,10 @@
  * @package yom-theme
  */
 
-if ( ! function_exists( 'yom_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
+if ( ! function_exists( 'yom_setup' ) ) {
 	function yom_setup() {
 		/*
 		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on yom-theme, use a find and replace
-		 * to change 'yom' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'yom', get_template_directory() . '/languages' );
 
@@ -29,9 +19,6 @@ if ( ! function_exists( 'yom_setup' ) ) :
 
 		/*
 		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
 
@@ -44,7 +31,14 @@ if ( ! function_exists( 'yom_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'yom' ),
+			'primary' => esc_html__( 'Primary', 'yom' ),
+		) );
+
+		// Enable support for Post Formats.
+		add_theme_support( 'post-formats', array(
+			// 'gallery',
+			'quote',
+			'status',
 		) );
 
 		/*
@@ -80,12 +74,11 @@ if ( ! function_exists( 'yom_setup' ) ) :
 			'flex-height' => true,
 		) );
 	}
-endif;
+} // endif;
 add_action( 'after_setup_theme', 'yom_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
- *
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
@@ -103,7 +96,7 @@ add_action( 'after_setup_theme', 'yom_content_width', 0 );
 function yom_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'yom' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'yom' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -155,4 +148,3 @@ require get_template_directory() . '/_inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/_inc/jetpack.php';
 }
-
