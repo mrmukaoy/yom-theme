@@ -9,10 +9,10 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area">
-	<main id="main" class="site-main">
+<main id="main" class="site-main">
+	<section id="primary" class="content-area">
 
-		<section class="error-404 not-found">
+		<div class="error-404 not-found">
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'yom' ); ?></h1>
 			</header><!-- .page-header -->
@@ -49,10 +49,11 @@ get_header(); ?>
 				?>
 
 			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		</div><!-- .error-404 -->
 
-	</main><!-- #main -->
-</section><!-- #primary -->
+	</section><!-- #primary -->
+
+</main><!-- #main -->
 
 <?php
 get_footer();

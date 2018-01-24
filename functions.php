@@ -123,6 +123,28 @@ function yom_scripts() {
 add_action( 'wp_enqueue_scripts', 'yom_scripts' );
 
 /**
+ * Customize the title tag
+ */
+function yom_document_title_separator( $sep ) {
+	// separator
+	$sep = '|';
+	return $sep;
+}
+add_filter( 'document_title_separator', 'yom_document_title_separator' );
+
+function yom_override_post_title( $title ) {
+	// If on the home or front page, skip the page title.
+	if ( is_home() || is_front_page() ) {
+		$title['title'] = '';
+		$title['site'] = get_bloginfo( 'name' );
+	}
+	// Remove the site "tagline" altogether
+	$title['tagline'] = '';
+	return $title;
+}
+add_filter( 'document_title_parts', 'yom_override_post_title' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/_inc/custom-header.php';
