@@ -1,0 +1,23 @@
+{
+	"name": "yom-theme",
+	"version": "3.0.0",
+	"description": "Custom WordPress theme for yomartin.com",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mrmukaoy/yom-theme.git"
+	},
+	"keywords": [
+		"wordpress"
+	],
+	"author": "Martin Yoakum",
+	"license": "GNU General Public License v2 or later",
+	"devDependencies": {
+		"autoprefixer": "^7.1.4",
+		"grunt": "~1.0.1",
+		"grunt-contrib-uglify": "~1.0.1",
+		"grunt-contrib-watch": "~1.0.0",
+		"grunt-postcss": "^0.9.0",
+		"grunt-sass": "~1.2.0",
+		"load-grunt-tasks": "~3.5.0"
+	}
+}
