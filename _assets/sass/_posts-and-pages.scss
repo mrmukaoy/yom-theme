@@ -1,3 +1,44 @@
+/* # General page layout
+------------------------------------------*/
+.site-header,
+.site-content,
+.site-footer {
+	padding: 0 $line-spacing;
+}
+
+.site-main {
+	background-color: #cc9;
+	margin: 0 auto;
+	max-width: 60em;
+}
+
+.content-area {
+	// main content
+	background-color: #ccc;
+	max-width: 36em;
+	margin: 0 auto;
+
+	&.w-sidebar {
+		@media screen and (min-width: $break-2col) {
+			float: left;
+			width: 64%;
+		}
+	}
+}
+
+.widget-area {
+	// sidebars
+	background-color: #ddd;
+
+	@media screen and (min-width: $break-2col) {
+		float: right;
+		width: 33%;
+		max-width: 16em;
+	}
+}
+
+/* # other WP classes
+------------------------------------------*/
 .sticky {
 	display: block;
 }

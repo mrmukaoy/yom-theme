@@ -7,10 +7,16 @@
  * @package yom-theme
  */
 
-get_header(); ?>
+get_header();
+
+$addclass = '';
+if ( is_active_sidebar( 'sidebar' ) ) {
+	$addclass = 'w-sidebar';
+}
+?>
 
 <main id="main" class="site-main">
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area <?php echo $addclass; ?>">
 
 		<div class="error-404 not-found">
 			<header class="page-header">

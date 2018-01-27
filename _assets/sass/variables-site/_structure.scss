@@ -1,5 +1,10 @@
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+$line-spacing:       $font_line-height-body * 1rem;
+
+/* # Breakpoints
+------------------------------------------*/
+$break-sm:   36em; // max reading line-length
+$break-2col: 46em; // begin 2 column layout
+$break-md:   50em;
 
 /* # Columns
 ------------------------------------------*/
@@ -14,5 +19,4 @@ $columns: (
 	8: 12.5%,
 	9: 11.11%
 );
-
-$columns__margin: 3.8%;
+$columns__margin:    3.8%;

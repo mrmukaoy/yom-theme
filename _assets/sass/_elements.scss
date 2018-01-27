@@ -15,9 +15,9 @@ select,
 optgroup,
 textarea {
 	color: $color__text-main;
-	font-family: $font__main;
+	font-family: $font_main;
 	@include font-size(1);
-	line-height: $font__line-height-body;
+	line-height: $font_line-height-body;
 }
 
 body {
@@ -56,9 +56,9 @@ address {
 
 pre {
 	background: $color__background-pre;
-	font-family: $font__pre;
+	font-family: $font_pre;
 	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
+	line-height: $font_line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -66,7 +66,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
+	font-family: $font_code;
 	@include font-size(0.9375);
 }
 
