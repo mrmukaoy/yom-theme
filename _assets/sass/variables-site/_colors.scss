@@ -1,20 +1,29 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+/* # Main Pallette
+------------------------------------------*/
+$blue:   #00a0b0;
+$brown:  #6a4a3c;
+$red:    #cc333f;
+$orange: #eb6841;
+$yellow: #edc951;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+/* # Derived Colors
+------------------------------------------*/
+$text:                 shade($brown, 25%);
+$text-input:           #666;
+$text-input-focus:     #111;
+$color_link:           $red;
+$color_link-visited:   $red;
+$color_link-hover:     $red;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color_background:     tint($brown, 90%);
+$color_background-alt: tint($brown, 80%);
+$color_background-hr: #ccc;
+$color_button: #e6e6e6;
+$color_background-pre: #eee;
+$color_background-ins: #fff9c0;
+
+$color_border-button: #ccc #ccc #bbb;
+$color_border-button-hover: #ccc #bbb #aaa;
+$color_border-button-focus: #aaa #bbb #bbb;
+$color_border-input: #ccc;
+$color_border-abbr: #666;

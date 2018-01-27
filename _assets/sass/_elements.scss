@@ -14,18 +14,18 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
+	color: $text;
 	font-family: $font_main;
 	@include font-size(1);
 	line-height: $font_line-height-body;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color_background; /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: $color_background-hr;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -55,7 +55,7 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
+	background: $color_background-pre;
 	font-family: $font_pre;
 	@include font-size(0.9375);
 	line-height: $font_line-height-pre;
@@ -71,12 +71,12 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted $color_border-abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: $color__background-ins;
+	background: $color_background-ins;
 	text-decoration: none;
 }
 
