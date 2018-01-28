@@ -1,3 +1,25 @@
+// Modular scaled
+// returns value in embeds
+@function ms($exponent) {
+	// ratio via http://www.modularscale.com/?1&em&1.25
+	$value: 1;
+	$ratio: 1.25;
+
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $ratio;
+		}
+	} @else if $exponent < 0 {
+		@for $i from 1 through -$exponent {
+			$value: $value / $ratio;
+		}
+	}
+	$value: $value * 1em;
+
+	@return $value;
+}
+
+
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;

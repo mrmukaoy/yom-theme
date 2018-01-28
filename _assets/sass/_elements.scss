@@ -16,7 +16,7 @@ optgroup,
 textarea {
 	color: $text;
 	font-family: $font_main;
-	@include font-size(1);
+	font-size: ms(0);
 	line-height: $font_line-height-body;
 }
 
@@ -36,18 +36,89 @@ hr {
 ------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	margin-bottom: 0;
+}
+h1, h2, h3 {
+	color: $brown;
+}
+h1 {
+	font-size: ms(4);
+	line-height: 3rem;
+	margin-top: 1.5rem;
+}
+h2 {
+	font-size: ms(3);
+	line-height: 2.25rem;
+	margin-top: 2.5rem;
+}
+h3 {
+	font-size: ms(2);
+	line-height: 1.875rem;
+	margin-top: 1.125rem;
+}
+h4 {
+	font-size: ms(1);
+	line-height: 1.5rem;
+	margin-top: 1.5rem;
+}
+h5 {
+	font-size: ms(0);
+	text-transform: uppercase;
+	margin: 0;
+}
+h6 {
+	font-weight: bold;
+	font-size: ms(0);
+	margin: 0;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0 0 1.5em;
 }
 
 dfn, cite, em, i {
 	font-style: italic;
 }
 
+strong, b {
+	font-weight: bold;
+}
+
+cite {
+	display: block;
+	margin: 0 0 0 2em;
+
+	&:before {
+		content: "\25AC";
+		color: $orange;
+		display: inline-block;
+		width: 1.25rem;
+		margin-left: -1rem;
+	}
+}
+
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 0 1.5em;
+	padding: .25em 0 .25em 1.25em;
+	border-left: .25em solid $orange;
+	border-radius: .25em;
+
+	p {
+		font-style: italic;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		em {
+			font-style: normal;
+			color: $brown;
+		}
+	}
+
+	cite {
+		font-style: normal;
+	}
 }
 
 address {
@@ -55,10 +126,12 @@ address {
 }
 
 pre {
-	background: $color_background-pre;
 	font-family: $font_pre;
 	@include font-size(0.9375);
 	line-height: $font_line-height-pre;
+	background: $color_background-pre;
+	color: $text-pre;
+	border-radius: .25em;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -68,10 +141,17 @@ pre {
 code, kbd, tt, var {
 	font-family: $font_code;
 	@include font-size(0.9375);
+	background: $color_background-pre;
+	color: $text-pre;
+	border-radius: .25em;
+	padding: 0 .25em;
 }
 
-abbr, acronym {
-	border-bottom: 1px dotted $color_border-abbr;
+abbr,
+abbr[title],
+acronym {
+	border-bottom: 2px dotted $color_border-abbr;
+	text-decoration: none;
 	cursor: help;
 }
 
@@ -84,10 +164,6 @@ big {
 	font-size: 125%;
 }
 
-/* # Lists
-------------------------------------------*/
-@import "lists";
-
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
@@ -97,7 +173,3 @@ figure {
 	margin: 0 0 1em; /* Extra wide images within figure tags don't overflow the content area. */
 	border-bottom: 1px solid $blue;
 }
-
-/* # Tables
-------------------------------------------*/
-@import "tables";

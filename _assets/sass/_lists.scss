@@ -3,12 +3,49 @@ ul, ol {
 	padding: 0 0 0 1.5em;
 }
 
-ul {
+.ul {
 	list-style: disc;
+}
+
+.site-content ul {
+	list-style: none;
+
+	 & > li {
+		&:before {
+			content: "\25B6";
+			font-size: .875em;
+			color: $blue;
+			display: inline-block;
+			width: 1.5rem;
+			margin-left: -1.5rem;
+		}
+
+		ul > li {
+			&:before {
+				content: "\25CF";
+				font-size: 1em;
+				color: $orange;
+			}
+
+			ul > li {
+				&:before {
+					color: $brown;
+				}
+			}
+		}
+	}
 }
 
 ol {
 	list-style: decimal;
+
+	ol {
+		list-style: lower-alpha;
+
+		ol {
+			list-style: lower-roman;
+		}
+	}
 }
 
 li > ul,
@@ -17,10 +54,27 @@ li > ol {
 	margin-left: 0;
 }
 
+dl {
+	margin: 0 0 1.5em;
+}
 dt {
 	font-weight: bold;
+	margin-top: 1.5em;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0  0 0 1.5em;
+
+	&:before {
+		content: "\25B6";
+		font-size: .875em;
+		color: $blue;
+		display: inline-block;
+		width: 1.5rem;
+		margin-left: -1.5rem;
+	}
 }

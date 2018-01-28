@@ -9,21 +9,22 @@ $yellow: #edc951;
 /* # Derived Colors
 ------------------------------------------*/
 $text:                 shade($brown, 25%);
+$text-pre:             shade($brown, 35%);
 $text-input:           #666;
 $text-input-focus:     #111;
 $color_link:           $red;
 $color_link-visited:   $red;
 $color_link-hover:     $red;
 
-$color_background:     tint($brown, 90%);
+$color_background:     tint($brown, 95%);
 $color_background-alt: tint($brown, 80%);
-$color_background-hr: #ccc;
-$color_button: #e6e6e6;
-$color_background-pre: #eee;
-$color_background-ins: #fff9c0;
+$color_background-hr:  #ccc;
+$color_button:         #e6e6e6;
+$color_background-pre: tint($brown, 80%);
+$color_background-ins: tint($yellow, 50%);
 
-$color_border-button: #ccc #ccc #bbb;
+$color_border-button:  #ccc #ccc #bbb;
 $color_border-button-hover: #ccc #bbb #aaa;
 $color_border-button-focus: #aaa #bbb #bbb;
-$color_border-input: #ccc;
-$color_border-abbr: #666;
+$color_border-input:   #ccc;
+$color_border-abbr:    $red;
