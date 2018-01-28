@@ -94,7 +94,8 @@ img {
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 0 0 1em; /* Extra wide images within figure tags don't overflow the content area. */
+	border-bottom: 1px solid $blue;
 }
 
 /* # Tables
