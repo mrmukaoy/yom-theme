@@ -48,6 +48,25 @@
 	display: none;
 }
 
+.entry-title {
+	@at-root {
+		h1#{&} {
+			// WCAG 2.0 AA - only good for large type
+			color: shade($blue, 20%);
+		}
+	}
+
+	a {
+		color: $brown;
+		text-decoration: none;
+
+		&:hover,
+		&focus {
+			text-decoration: underline;
+		}
+	}
+}
+
 .page-content,
 .entry-content,
 .entry-summary {

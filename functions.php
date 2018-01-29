@@ -110,7 +110,14 @@ add_action( 'widgets_init', 'yom_widgets_init' );
  * Enqueue scripts and styles.
  */
 function yom_scripts() {
-	wp_enqueue_style( 'yom-style', get_stylesheet_uri() );
+	$this_theme = wp_get_theme();
+	$this_version = $this_theme->get( 'Version' );
+
+	wp_enqueue_style( 'yom-style', get_stylesheet_uri(), array(), $this_version );
+
+	// Base Googe Font style + script.
+	wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Neuton' );
+	wp_enqueue_style( 'googleFonts' );
 
 	wp_enqueue_script( 'yom-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
