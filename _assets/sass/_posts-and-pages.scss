@@ -68,6 +68,15 @@
 	}
 }
 
+.cat-links,
+.tags-links,
+.comments-link,
+.edit-link {
+	display: block;
+	font-size: .875em;
+	margin-bottom: 1rem;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
