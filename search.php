@@ -31,6 +31,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( '_inc/partials/content', 'search' );
+			echo '<hr>';
 		endwhile;
 
 		the_posts_navigation();

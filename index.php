@@ -37,6 +37,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 		while ( have_posts() ) : the_post();
 
 			get_template_part( '_inc/partials/content', get_post_format() );
+			echo '<hr>';
 
 		endwhile;
 

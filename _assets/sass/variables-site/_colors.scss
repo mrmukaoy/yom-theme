@@ -19,12 +19,12 @@ $color_link-hover:     $red;
 $color_background:     tint($brown, 95%);
 $color_background-alt: tint($brown, 80%);
 $color_background-hr:  #ccc;
-$color_button:         #e6e6e6;
+$color_button:         $red;
 $color_background-pre: tint($brown, 80%);
 $color_background-ins: tint($yellow, 50%);
 
-$color_border-button:  #ccc #ccc #bbb;
-$color_border-button-hover: #ccc #bbb #aaa;
-$color_border-button-focus: #aaa #bbb #bbb;
+$color_border-button:  shade($red, 25%) shade($red, 25%) shade($red, 40%);
+$color_border-button-hover: shade($red, 25%) shade($red, 40%) shade($red, 50%);
+$color_border-button-focus: shade($red, 50%) shade($red, 40%) shade($red, 40%);;
 $color_border-input:   #ccc;
 $color_border-abbr:    $red;
