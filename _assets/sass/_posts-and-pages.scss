@@ -6,6 +6,21 @@
 	padding: 0 $line-spacing;
 }
 
+.site-title a {
+	// emulate H1 styles
+	font-size: ms(4);
+	font-family: $font_heads;
+	font-weight: bold;
+	// WCAG 2.0 AA - only good for large type
+	color: shade($blue, 20%);
+	text-decoration: none;
+
+	&:hover {
+		color: $red;
+		text-decoration: underline;
+	}
+}
+
 .site-main {
 	margin: 0 auto;
 	max-width: 60em;
@@ -48,14 +63,14 @@
 	display: none;
 }
 
-.entry-title {
-	@at-root {
-		h1#{&} {
-			// WCAG 2.0 AA - only good for large type
-			color: shade($blue, 20%);
-		}
-	}
+.site-title,
+h1.page-title,
+h1.entry-title {
+	// WCAG 2.0 AA - only good for large type
+	color: shade($blue, 20%);
+}
 
+.entry-title {
 	a {
 		color: $brown;
 		text-decoration: none;
@@ -92,8 +107,8 @@
 .comments-link,
 .edit-link {
 	display: block;
-	font-size: .875em;
-	margin-bottom: 1rem;
+	// font-size: .875em;
+	margin-bottom: 1em;
 }
 
 .page-links {

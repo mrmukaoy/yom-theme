@@ -49,17 +49,38 @@ if ( ! function_exists( 'yom_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'yom' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'yom' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			$the_tags = get_the_tags();
+			$tags_list = '';
+
+			if ( $the_tags ) {
+				foreach ( $the_tags as $tag ) {
+					$tags_list .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" rel="tag">';
+					$tags_list .= '#' . esc_html( $tag->name );
+					$tags_list .= '</a>, ';
+				}
+				$tags_list = rtrim( $tags_list, ', ' );
+
+				echo '<span class="tags-links">' . $tags_list . '</span>';
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'yom' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'yom' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$the_cats = get_the_category();
+			$cats_list = '';
+
+			if ( $the_cats ) {
+				foreach ( $the_cats as $cat ) {
+					if ( 'Uncategorized' != $cat->name ) {
+						$cats_list .= '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" rel="category tag">';
+						$cats_list .= esc_html( $cat->name );
+						$cats_list .= '</a>, ';
+					}
+				}
+				if ( $cats_list ) {
+					// if there are any cats left now that we've eliminated 'uncategorized'
+					$cats_list = rtrim( $cats_list, ', ' );
+
+					echo '<span class="cat-links">Categorized ' . $cats_list . '</span>';
+				}
 			}
 		}
 
@@ -69,7 +90,7 @@ if ( ! function_exists( 'yom_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'yom' ),
+						__( 'Leave a Comment <span class="screen-reader-text">on %s</span>', 'yom' ),
 						array(
 							'span' => array(
 								'class' => array(),
