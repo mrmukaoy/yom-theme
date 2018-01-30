@@ -4,6 +4,10 @@
 	float: left;
 	width: 100%;
 
+	.menu {
+		text-align: center;
+	}
+
 	ul {
 		display: none;
 		list-style: none;
@@ -11,7 +15,9 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			background-color: #fff;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+			text-align: left;
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -24,6 +30,9 @@
 			}
 
 			li {
+				margin: 0;
+				padding: .25em 0 0 0;
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -31,7 +40,7 @@
 			}
 
 			a {
-				width: 200px;
+				width: 160px;
 			}
 
 			:hover > a,
@@ -50,7 +59,9 @@
 	}
 
 	li {
-		float: left;
+		display: inline-block;
+		margin: 0 .25em;
+		padding-top: .25em;
 		position: relative;
 
 		&:hover > a,
@@ -60,7 +71,10 @@
 
 	a {
 		display: block;
+		font-weight: bold;
+		padding: 0 .25em;
 		text-decoration: none;
+		border-bottom: 3px solid $red;
 	}
 
 	.current_page_item > a,
