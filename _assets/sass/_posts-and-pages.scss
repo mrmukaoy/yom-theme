@@ -6,6 +6,14 @@
 	padding: 0 $line-spacing;
 }
 
+.site-branding {
+	margin-bottom: 1.5em;
+
+	.site-title {
+		margin: 0;
+	}
+}
+
 .site-title a {
 	// emulate H1 styles
 	font-size: ms(4);
@@ -16,9 +24,17 @@
 	text-decoration: none;
 
 	&:hover {
-		color: $red;
 		text-decoration: underline;
 	}
+}
+
+.site-description {
+	font-family: $font_heads;
+	font-style: italic;
+	font-size: ms(2);
+	// WCAG 2.0 AA - only good for large type
+	color: shade($blue, 20%);
+	margin: 0;
 }
 
 .site-main {
@@ -114,4 +130,58 @@ h1.entry-title {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/* # Post format = "Status"
+------------------------------------------*/
+.format-status {
+	padding-top: 1.5rem;
+
+	.entry-meta {
+		font-family: $font_casual;
+		font-size: ms(1);
+		text-align: right;
+		margin-top: 1rem;
+	}
+
+	.entry-content p,
+	.entry-content ol,
+	.entry-content ul {
+		font-family: $font_casual;
+		font-size: ms(2);
+		margin-bottom: 1.5rem;
+	}
+
+	.tags-links {
+		font-family: $font_casual;
+		font-size: ms(1);
+		margin-top: -1.5rem;
+		margin-bottom: 1.5rem;
+	}
+}
+.status-note {
+	position: relative;
+	transform: rotate(-7deg);
+	transform-style: preserve-3d;
+	max-width: 425px;
+	margin: 2em auto 1.5em;
+	padding: 0 1.5rem;
+	background-color: #f9f98e;
+	border: 1px solid #f9f98e;
+	border-bottom-color: rgba(0,0,0,.2);
+
+	&:after {
+		z-index: -1;
+		position: absolute;
+		display: inline-block;
+		content: "";
+		bottom: 15px;
+		right: 10px;
+		left: auto;
+		width: calc(100% - 20px);
+		top: 80%;
+		background: rgba(0,0,0,.5);
+		box-shadow: 0 15px 10px rgba(0,0,0,.5);
+		transform: translateZ(-1em);
+	}
 }

@@ -25,12 +25,6 @@ body {
 }
 
 hr {
-/*
-	background-color: $color_background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-*/
 	padding: 0;
 	border: none;
 	border-top: 4px solid $blue;
@@ -44,7 +38,7 @@ hr {
 		top: -0.875em;
 		font-size: 1.5em;
 		padding: 0 0.25em;
-		background: tint($brown, 95%);
+		background: $color_background;
 	}
 }
 

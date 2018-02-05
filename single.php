@@ -21,12 +21,17 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 	<?php
 	while ( have_posts() ) : the_post();
 
-		get_template_part( '_inc/partials/content', get_post_type() );
+		if ( 'post' == get_post_type() ) {
+			get_template_part( '_inc/partials/content', get_post_format() );
+		} else {
+			get_template_part( '_inc/partials/content', get_post_type() );
+		}
 
 		the_post_navigation();
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
+			echo '<hr/>';
 			comments_template();
 		} // endif;
 

@@ -29,6 +29,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 			get_template_part( '_inc/partials/content', 'page' );
 
 			if ( comments_open() || get_comments_number() ) {
+				echo '<hr/>';
 				comments_template();
 			} // endif;
 

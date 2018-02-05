@@ -1,3 +1,33 @@
+.comments-title {
+	margin-bottom: 1.5rem;
+}
+
+.comment-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.comment, .pingback {
+	padding-bottom: 1.5em;
+	margin-bottom: 1.5em;
+	border-bottom: 1px solid $brown;
+}
+
+.comment .children {
+	list-style-type: none;
+	margin-top: 1.5em;
+	border-left: .5em solid $blue;
+	padding-left: 1em;
+
+	.children {
+		border-left-color: $orange;
+
+		.children {
+			border-left-color: $brown;
+		}
+	}
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
