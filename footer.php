@@ -14,17 +14,17 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<?php if ( is_active_sidebar( 'footer' ) ) { ?>
+			<aside id="footer-widgets" class="footer-widget-area">
+				<?php dynamic_sidebar( 'footer' ); ?>
+			</aside><!-- #secondary -->
+		<?php } ?>
+
+		<?php /* */ ?>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'yom' ) ); ?>"><?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'yom' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'yom' ), 'yom', '<a href="http://yomartin.com">Martin Yoakum</a>' );
-			?>
+			&copy; <?php echo date( 'Y' ); ?> Martin Yoakum
 		</div><!-- .site-info -->
+		<?php /* */ ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

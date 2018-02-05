@@ -1,8 +1,16 @@
 .widget {
 	margin: 0 0 1.5em;
+	text-align: left;
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
 	}
+}
+
+/* # Footer widgets
+------------------------------------------*/
+.footer-widget-area {
+	border-top: 1px solid $brown;
+	padding-top: 1.5em;
 }
