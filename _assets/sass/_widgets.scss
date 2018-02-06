@@ -13,4 +13,120 @@
 .footer-widget-area {
 	border-top: 1px solid $brown;
 	padding-top: 1.5em;
+
+	@media screen and (min-width: $break-sm) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.widget {
+		flex: 0 1 auto;
+		max-width: 20em;
+		padding: 0 1rem;
+		margin: 0 auto 1.5rem;
+		// background-color: $color_background-pre;
+		border-bottom: 2px dotted $brown;
+
+		.widget-title {
+			margin-top: 0;
+		}
+
+		@media screen and (min-width: $break-sm) {
+			border-right: 2px dotted $brown;
+			border-bottom: none;
+
+			&:last-child {
+				border-right: none !important;
+			}
+		}
+	}
+}
+
+/* Make footer widgets display pretty */
+.one-across .widget {
+	max-width: 100%;
+}
+
+.two-across {
+	max-width: 45em;
+	margin-right: auto;
+	margin-left: auto;
+
+	.widget {
+		@media screen and (min-width: $break-sm) {
+			width: 50%;
+		}
+	}
+}
+
+.three-across {
+	max-width: 70em;
+	margin-right: auto;
+	margin-left: auto;
+
+	.widget {
+		@media screen and (min-width: $break-sm) and (max-width: $break-md) {
+			width: 50%;
+
+			&:nth-child(even) {
+				border-right: none;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		@media screen and (min-width: $break-2col) {
+			width: 33%;
+
+			&:nth-child(3n) {
+				border-right: none;
+			}
+		}
+	}
+}
+
+.four-across {
+	max-width: 90em;
+	margin-right: auto;
+	margin-left: auto;
+
+	.widget {
+		@media screen and (min-width: $break-sm) and (max-width: $break-md) {
+			width: 50%;
+
+			&:nth-child(even) {
+				border-right: none;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		@media screen and (min-width: $break-2col) {
+			width: 33%;
+
+			&:nth-child(even) {
+				border-right: 2px dotted $brown;
+			}
+
+			&:nth-child(3n) {
+				border-right: none;
+			}
+		}
+
+		@media screen and (min-width: $break-md) {
+			width: 25%;
+
+			&:nth-child(3n) {
+				border-right: 2px dotted $brown;
+			}
+			&:nth-child(4n) {
+				border-right: none;
+			}
+		}
+	}
 }

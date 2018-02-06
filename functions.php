@@ -161,6 +161,16 @@ function yom_override_post_title( $title ) {
 add_filter( 'document_title_parts', 'yom_override_post_title' );
 
 /**
+ * Get number of widgets in sidebar
+ *
+ * @param id of sidebar area
+ */
+function get_widgets_count( $sidebar_id ) {
+	$sidebars_widgets = wp_get_sidebars_widgets();
+	return (int) count( (array) $sidebars_widgets[ $sidebar_id ] );
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/_inc/custom-header.php';
