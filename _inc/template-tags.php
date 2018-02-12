@@ -170,16 +170,21 @@ if ( ! function_exists( 'yom_post_thumbnail' ) ) {
 			return;
 		}
 
+		// Evaluate dimensions: is it a vertical image?
+		$shape = '';
+		$image = wp_get_attachment_metadata( get_post_thumbnail_id() );
+		if ( $image['width'] <= $image['height'] ) { $shape = 'vertical'; }
+
 		if ( is_singular() ) { ?>
 
-			<div class="post-thumbnail">
+			<div class="post-thumbnail <?php echo $shape; ?>">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 
 			<?php
 		} else { ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<a class="post-thumbnail <?php echo $shape; ?>" href="<?php the_permalink(); ?>" aria-hidden="true">
 				<?php
 					the_post_thumbnail( 'post-thumbnail', array(
 						'alt' => the_title_attribute( array(
