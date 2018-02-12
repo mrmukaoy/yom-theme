@@ -7,6 +7,14 @@
  * @package yom-theme
  */
 
+/*
+ * Get uder role (needed for byline)
+ */
+function get_user_role( $id ) {
+	$user = new WP_User( $id );
+	return array_shift( $user->roles );
+}
+
 if ( ! function_exists( 'yom_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
@@ -30,11 +38,17 @@ if ( ! function_exists( 'yom_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'yom' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+		$byline = '';
+		$author_info = get_the_author_meta( 'ID' );
+		$role = get_user_role( $author_info );
+		if ( 'administrator' != $role ) {
+			// skip if an admin
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				esc_html_x( 'by %s', 'post author', 'yom' ),
+				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			);
+		}
 
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
