@@ -1,0 +1,97 @@
+/* # SVG icons
+------------------------------------------*/
+.icon {
+	display: inline-block;
+	width: 1.75rem;
+	height: 1.75rem;
+	margin-right: .25rem;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+//	position: absolute;
+//	top: .375rem;
+}
+
+.name {
+	margin-left: 2.5em;
+}
+
+.glyph {
+	width: 50%;
+	float: left;
+	padding-top: .5em;
+	margin-bottom: .5em;
+	position: relative;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+	font-size: 32px;
+	color: red;
+}
+========================================== */
+
+// use icon's brand colors
+.icon-codepen {
+	fill: #000000;
+}
+.icon-deviantart {
+	fill: #05cc47;
+}
+.icon-dropbox {
+	fill: #007ee5;
+}
+.icon-faceb {
+	fill: #3b5998;
+}
+.icon-file-pdf {
+	fill: #ff0000;
+}
+.icon-flickr2 {
+	fill: #0063dc;
+}
+.icon-git {
+	fill: #f34f29;
+}
+.icon-ghub {
+	fill: #000000;
+}
+.icon-inst {
+	fill: #000000;
+}
+.icon-lin {
+	fill: #0077b5;
+}
+.icon-rss2 {
+	fill: #f26522;
+}
+.icon-twi {
+	fill: #1da1f2;
+}
+.icon-wp {
+	fill: #21759b;
+}
+.icon-ytube {
+	fill: #ff0000;
+}
+
+// colors for non-brand icons
+.icon-cancel-circle {
+	fill: $red;
+}
+.icon-check {
+	fill: $good;
+}
+.icon-info {
+	fill: $info;
+}
+.icon-notice {
+	fill: $orange;
+}
+.icon-question {
+	fill: $info;
+}
+.icon-warning {
+	fill: $orange;
+}

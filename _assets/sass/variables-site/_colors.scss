@@ -28,3 +28,10 @@ $color_border-button-hover: shade($red, 25%) shade($red, 40%) shade($red, 50%);
 $color_border-button-focus: shade($red, 50%) shade($red, 40%) shade($red, 40%);;
 $color_border-input:   #ccc;
 $color_border-abbr:    $red;
+
+/* # Informational Colors
+------------------------------------------*/
+$error: $red;
+$warn:  $orange;
+$info:  #0145ff;
+$good:  #00d21a;

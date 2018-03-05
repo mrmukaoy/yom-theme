@@ -214,3 +214,37 @@ h1.entry-title {
 		transform: translateZ(-1em);
 	}
 }
+
+/* # Twitter embeds
+------------------------------------------*/
+.twitter-tweet {
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	padding: 1em;
+	background-color: #fff;
+	position: relative;
+	font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -12px;
+		left: -12px;
+		width: 32px;
+		height: 32px;
+		background: url('_assets/img/twi.svg') no-repeat;
+	}
+
+	p {
+		font-style: normal;
+	}
+
+	p:last-child {
+		font-weight: bold;
+
+		a {
+			font-weight: normal;
+			font-size: .875em;
+		}
+	}
+}
