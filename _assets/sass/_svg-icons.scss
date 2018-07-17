@@ -2,18 +2,18 @@
 ------------------------------------------*/
 .icon {
 	display: inline-block;
-	width: 1.75rem;
-	height: 1.75rem;
+	width: 1.25rem;
+	height: 1.25rem;
 	margin-right: .25rem;
 	stroke-width: 0;
 	stroke: currentColor;
 	fill: currentColor;
-//	position: absolute;
-//	top: .375rem;
+	position: relative;
+	top: .25rem;
 }
 
 .name {
-	margin-left: 2.5em;
+	margin-left: 0;
 }
 
 .glyph {
