@@ -47,9 +47,10 @@ object {
 
 .gallery-item {
 	display: inline-block;
-	text-align: center;
+	text-align: letter-spacing;
 	vertical-align: top;
 	width: 100%;
+	padding-right: 1em;
 
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
@@ -61,4 +62,6 @@ object {
 
 .gallery-caption {
 	display: block;
+	font-size: .875em;
+	line-height: 1.25;
 }

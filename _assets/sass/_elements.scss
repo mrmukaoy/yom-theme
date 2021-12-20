@@ -105,8 +105,8 @@ cite {
 	margin: 0 0 0 2em;
 
 	&:before {
-		content: "\25AC";
-		color: $orange;
+		content: "\2014";
+		// color: $orange;
 		display: inline-block;
 		width: 1.25rem;
 		margin-left: -1rem;
@@ -134,6 +134,7 @@ blockquote {
 
 	cite {
 		font-style: normal;
+		margin: -1em 0 0 1em;
 	}
 }
 
@@ -187,5 +188,5 @@ img {
 
 figure {
 	margin: 0 0 1em; /* Extra wide images within figure tags don't overflow the content area. */
-	border-bottom: 1px solid $blue;
+	// border-bottom: 1px solid $blue;
 }

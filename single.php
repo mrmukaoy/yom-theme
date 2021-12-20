@@ -11,7 +11,10 @@ get_header();
 
 $addclass = '';
 if ( is_active_sidebar( 'sidebar' ) ) {
-	$addclass = 'w-sidebar';
+	$addclass .= 'w-sidebar ';
+}
+if ( is_singular() && has_category( 'email' ) ) {
+	$addclass .= 'category-email ';
 }
 ?>
 
@@ -22,9 +25,19 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 	while ( have_posts() ) : the_post();
 
 		if ( 'post' == get_post_type() ) {
+
+			if ( has_category( 'email' ) && '' != get_field('email_html_file') ) {
+				get_template_part( '_inc/partials/content', 'email' );
+			} else {
 			get_template_part( '_inc/partials/content', get_post_format() );
+			}
+
 		} else {
 			get_template_part( '_inc/partials/content', get_post_type() );
+		}
+
+		if ( 'post' == get_post_type() && ! has_post_format() && has_category( 'email' ) ) {
+			get_template_part( '_inc/partials/email-demo' );
 		}
 
 		the_post_navigation();

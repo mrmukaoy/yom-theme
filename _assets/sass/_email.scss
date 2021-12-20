@@ -1,0 +1,35 @@
+.content-area.category-email {
+	max-width:100%;
+}
+.category-email .article-container {
+	max-width: 36em;
+	margin-right: 1.5em;
+	float: left;
+}
+
+.email-demo {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 3rem;
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	iframe {
+		border: none;
+		padding: 84.1px 16px 72.28px;
+	}
+
+	.frame {
+		position: absolute;
+
+		&.top    { top: 0; right: auto; bottom: auto; left: 0; }
+		&.right  { top: 84.1px; right: 0; bottom: auto; left: auto; }
+		&.bottom { top: auto; right: auto; bottom: 0; left: 0; }
+		&.left   { top: 84.1px; right: auto; bottom: auto; left: 0; }
+
+	}
+}
